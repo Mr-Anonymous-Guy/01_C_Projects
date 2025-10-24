@@ -45,7 +45,12 @@ This project helps you understand:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Mr-Anonymous-Guy/01_C_Projects.git
+   
    cd 01_C_Projects/cli-c-calculator
+
+   make
+
+   make run
 
 
 3. **Compile the Program**
