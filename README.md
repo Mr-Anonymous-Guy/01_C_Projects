@@ -1,90 +1,96 @@
-# 🧮 CLI Calculator (C Project)
+# 💻 C Programming Projects — 01_C_Projects
 
-![Language](https://img.shields.io/badge/language-C-blue)
-![Status](https://img.shields.io/badge/status-Active-success)
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
-
-A simple **Command-Line Calculator** built in **C language** that performs basic arithmetic operations and demonstrates the use of functions, conditional logic, and user input handling.
+A curated collection of **C language projects** built from beginner to advanced level.  
+Each program demonstrates core C concepts such as file handling, loops, arrays, and CLI-based system design — perfect for building your foundation and showcasing your practical coding skills.
 
 ---
 
-## 📘 Features
+## 🧭 Table of Contents
 
-✅ Performs all basic arithmetic operations:  
-- ➕ Addition  
-- ➖ Subtraction  
-- ✖️ Multiplication  
-- ➗ Division (with zero check)  
-- Scientific Operations
-- Memory
-- History
-- Clear Screen
-- ⚡ Power operation  
-
-✅ Menu-driven and interactive CLI interface  
-✅ Modular code using functions for each operation  
-✅ Input validation and error handling  
-✅ Beginner-friendly, easy to understand  
+1. [Overview](#overview)
+2. [Project List](#project-list)
+3. [Tech Stack](#tech-stack)
+4. [How to Run](#how-to-run)
+5. [Highlights](#highlights)
+6. [Future Additions](#future-additions)
+7. [Author](#author)
 
 ---
 
-## 🧠 Learning Objectives
+## 🚀 Overview
 
-This project helps you understand:
-- Function definitions and usage in C  
-- Conditional statements and loops  
-- Input/output handling  
-- Switch-case driven menus  
-- Code reusability and modular programming  
+This repository is part of my **multi-language GitHub portfolio** showcasing projects in **C, C++, Java, Python, and JavaScript** — starting from beginner logic programs to full AI-integrated tools.
+
+This specific section focuses on mastering **C fundamentals**, covering:
+- Control structures, functions, and modular design  
+- File handling and command-line tools  
+- Data handling through practical use-cases  
 
 ---
 
-## ⚙️ How to Run
+## 🧩 Project List
 
-1. **Clone the Repository**
+| Level | Project Name | Description |
+|:------|:--------------|:-------------|
+| **Level 1 (Basics)** | **Calculator** | CLI calculator using basic operations |
+| **Level 1 (Basics)** | **Pattern Printer** | Prints character & number patterns |
+| **Level 1 (Basics)** | **Student Record System** | Store/retrieve student info using file handling |
+| **Level 2 (Intermediate)** | **ATM System** | Simple banking operations using file handling |
+| **Level 2 (Intermediate)** | **Simple Banking System** | Deposit, Withdraw, and View Balance through CLI |
+| **Level 3 (Advanced)** | **Mini Shell / Command Line Tool** | Custom command-line tool with file operations and command parsing |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** C (ANSI C Standard)
+- **Compiler:** GCC / MinGW / Turbo C
+- **Editor:** Visual Studio Code / Code::Blocks / Dev C++
+- **Tools Used:** Header files, modular functions, makefile (for advanced projects)
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repo:
    ```bash
-   git clone https://github.com/Mr-Anonymous-Guy/01_C_Projects.git
+   git clone https://github.com/Mr-Anonymous-Guy/C-Projects.git
+   cd C-Projects
+
    
-   cd 01_C_Projects/cli-c-calculator
 
-   make
+✨ Highlights
 
-   make run
+✅ Beginner to advanced progression
 
+🧠 Strengthens logical & problem-solving skills
 
-3. **Compile the Program**
+📁 Structured with modular C files and headers
 
-gcc calculator.c -o calculator
+💾 Includes projects with file handling & CLI features
 
+🎯 Ideal for portfolio and placement preparation
 
-2. **Run the Executable**
+🔮 Future Additions
 
-./calculator
+Add Data Structure Toolkit (Stack, Queue, Linked List)
 
-4. **🖥️ Example Output**
+Add Expense Tracker with file-based storage
 
-====CLI CALCULATOR=====
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
-5. Scientific
-6. Memory
-7. History
-8. Clear Screen
-9. Exit
---------------------------
-Enter your choice: 1
-First number: 12 
-Second number: 8
-Result: 20
+Add AI-enhanced command suggestion shell (C-based mini AI)
 
-🧑‍💻 Author
+👤 Author
 
-Mr Anonymous Guy
-🌐 GitHub Profile
+💀 Mr-Anonymous-Guy
 
-🪪 License
+Code. Create. Conquer.
 
-This project is licensed under the MIT License — free to use and modify.
+📫 Reach me on:
+
+GitHub
+
+LinkedIn
+ https://www.linkedin.com/in/mr-anonymous-guy/
+
+📧 mr.anonymous071105@gmail.com
+
