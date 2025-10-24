@@ -89,8 +89,7 @@ Code. Create. Conquer.
 
 GitHub
 
-LinkedIn
- https://www.linkedin.com/in/mr-anonymous-guy/
+💼 [LinkedIn](https://www.linkedin.com/in/Mr-Anonymous-Guy/)  
 
 📧 mr.anonymous071105@gmail.com
 
