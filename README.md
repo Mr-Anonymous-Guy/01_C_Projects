@@ -87,7 +87,7 @@ Code. Create. Conquer.
 
 📫 Reach me on:
 
-GitHub
+🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
 
 💼 [LinkedIn](https://www.linkedin.com/in/Mr-Anonymous-Guy/)  
 
