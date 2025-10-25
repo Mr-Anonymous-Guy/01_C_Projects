@@ -16,10 +16,7 @@ A simple **Command-Line Calculator** built in **C language** that performs basic
 - ➖ Subtraction  
 - ✖️ Multiplication  
 - ➗ Division (with zero check)  
-- Scientific Operations
-- Memory
-- History
-- Clear Screen
+- 🔢 Modulus operation (`%`)  
 - ⚡ Power operation  
 
 ✅ Menu-driven and interactive CLI interface  
@@ -45,12 +42,7 @@ This project helps you understand:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Mr-Anonymous-Guy/01_C_Projects.git
-   
-   cd 01_C_Projects/cli-c-calculator
-
-   make
-
-   make run
+   cd 01_C_Projects/CLI_Calculator
 
 
 3. **Compile the Program**
@@ -64,20 +56,19 @@ gcc calculator.c -o calculator
 
 4. **🖥️ Example Output**
 
-====CLI CALCULATOR=====
+==========================
+     CLI CALCULATOR
+==========================
 1. Addition
 2. Subtraction
 3. Multiplication
 4. Division
-5. Scientific
-6. Memory
-7. History
-8. Clear Screen
-9. Exit
+5. Modulus
+6. Power
+0. Exit
 --------------------------
 Enter your choice: 1
-First number: 12 
-Second number: 8
+Enter two numbers: 12 8
 Result: 20
 
 🧑‍💻 Author
