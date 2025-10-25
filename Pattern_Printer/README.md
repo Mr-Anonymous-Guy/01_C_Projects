@@ -16,59 +16,47 @@ A **modular pattern generator in C**, designed for portfolio and freelance showc
 ---
 
 ## 📁 Project Structure
-
-```
+'''
 PatternPrinter/
-├── README.md            <- You are here
+├── README.md
 ├── Makefile
+├── build.bat          <- Windows build & run script
+├── build.sh           <- macOS/Linux/iOS build & run script
 ├── src/
 │   ├── main.c
 │   ├── patterns.c
 │   └── patterns.h
+├── history/
+│   └── output.txt     <- stores all pattern outputs
 └── examples/
     └── sample_output.txt
-```
+
+'''
 
 ---
 
-## 🧠 How It Works
-
-### PatternOptions Struct (core API)
-
-```c
-typedef struct {
-    PatternType type;   // Type of pattern (pyramid, diamond, etc.)
-    int rows;           // Number of rows
-    char fill;          // Fill character
-    int numbered;       // Enable number patterns
-    FILE *out;          // Output stream (stdout or file)
-} PatternOptions;
-```
-
-Main entry function:
-
-```c
-int print_pattern(const PatternOptions *opt);
-```
 
 ---
 
 ## 🛠️ Build Instructions
 
-### ✅ Using Makefile (Linux/macOS/MinGW)
+### ✅ Using Makefile (Linux/macOS/iOS)
 
 ```bash
 make            # Build executable
-./pattern_printer -p pyramid -r 5
+
+make run
 ```
+
 
 ### 🪟 On Windows (manual)
 
 If Makefile isn’t available:
 
 ```bash
-gcc src/main.c src/patterns.c -o pattern_printer.exe -I src
-pattern_printer.exe -p diamond -r 5
+make
+
+make run
 ```
 
 ---
@@ -87,54 +75,24 @@ pattern_printer.exe -p diamond -r 5
 
 ---
 
-## 💡 Usage Examples
+## 💡 Program Overview
 
-### 1️⃣ Print Pyramid (default)
-
-```bash
-./pattern_printer -p pyramid -r 5
-```
-
-```
-    *
-   ***
-  *****
- *******
-*********
-```
-
-### 2️⃣ Pascal Triangle to File
-
-```bash
-./pattern_printer -p pascal -r 6 -o pascal.txt
-```
-
-### 3️⃣ Number Pyramid (mirrored)
-
-```bash
-./pattern_printer -p numbers -r 5 -n
-```
+### 1️⃣ Run the program
 
 ---
 
-## 🧩 Example Output (sample_output.txt)
-
+```bash
+=== Pattern Printer ===
+1. Pyramid
+2. Inverted Pyramid
+3. Number Pyramid
+4. Pascal Triangle
+5. Diamond
+6. Hollow Diamond
+7. Butterfly
+8. Exit
+Enter choice (1-8):
 ```
-   *
-  ***
- *****
-*******
-```
-
----
-
-## 📈 Why This Project Attracts Employers
-
-✅ **Readable, structured C code** — professional modular separation and headers.
-✅ **Demonstrates CLI + file I/O skills** — commonly used in production-level systems.
-✅ **Clean documentation** — instant understanding for hiring managers or clients.
-✅ **Expandable design** — new patterns or options can be added with minimal changes.
-✅ **Ready for GitHub portfolio** — perfect to showcase low-level programming ability.
 
 ---
 
