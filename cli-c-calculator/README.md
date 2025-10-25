@@ -12,6 +12,7 @@ A simple **Command-Line Calculator** built in **C language** that performs basic
 ## 📘 Features
 
 ✅ Performs all basic arithmetic operations:  
+
 - ➕ Addition  
 - ➖ Subtraction  
 - ✖️ Multiplication  
@@ -29,6 +30,7 @@ A simple **Command-Line Calculator** built in **C language** that performs basic
 ## 🧠 Learning Objectives
 
 This project helps you understand:
+
 - Function definitions and usage in C  
 - Conditional statements and loops  
 - Input/output handling  
@@ -40,25 +42,38 @@ This project helps you understand:
 ## ⚙️ How to Run
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/Mr-Anonymous-Guy/01_C_Projects.git
-   cd 01_C_Projects/CLI_Calculator
+   cd 01_C_Projects/cli-c-calculator
+   ```
 
 
-3. **Compile the Program**
+2. **Compile the Program**
 
-gcc calculator.c -o calculator
+   ```bash
+   make
+
+   make run
+   ```
+
+2. **Option 2: Using Windows build.bat/sh (automatic)**
+
+Simply double-click the build.bat file in Windows Explorer, or run it from CMD/PowerShell:
+    ```bash
+   make 
+
+   make run
+   ```
 
 
-2. **Run the Executable**
-
-./calculator
 
 4. **🖥️ Example Output**
 
 ==========================
      CLI CALCULATOR
 ==========================
+
 1. Addition
 2. Subtraction
 3. Multiplication
@@ -66,6 +81,7 @@ gcc calculator.c -o calculator
 5. Modulus
 6. Power
 0. Exit
+
 --------------------------
 Enter your choice: 1
 Enter two numbers: 12 8
