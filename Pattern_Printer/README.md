@@ -16,24 +16,21 @@ A **modular pattern generator in C**, designed for portfolio and freelance showc
 ---
 
 ## 📁 Project Structure
-'''
+```bash
 PatternPrinter/
 ├── README.md
 ├── Makefile
-├── build.bat          <- Windows build & run script
-├── build.sh           <- macOS/Linux/iOS build & run script
+├── build.bat <- Windows build & run script
+├── build.sh <- macOS/Linux/iOS build & run script
 ├── src/
-│   ├── main.c
-│   ├── patterns.c
-│   └── patterns.h
+│ ├── main.c
+│ ├── patterns.c
+│ └── patterns.h
 ├── history/
-│   └── output.txt     <- stores all pattern outputs
+│ └── output.txt <- stores all pattern outputs
 └── examples/
-    └── sample_output.txt
-
-
-'''
-
+└── sample_output.txt
+```
 ---
 
 
