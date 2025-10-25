@@ -58,6 +58,9 @@ make
 
 make run
 ```
+### ✅ Alternate Way
+
+You can automatically open the program   just by double-clicking the build.sh (For macOS/LINUX/iOS) file and build.bat(Windows) 
 
 ---
 
