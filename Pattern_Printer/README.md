@@ -118,6 +118,7 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 ### 💻 Author
 
 **Developed by:** Mr-Anonymous-Guy**
+🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
 📧 Contact: mr.anonymous071105@gmail.com
 🌐 GitHub: [github.com/Mr-Anonymous-Guy]
 
