@@ -54,8 +54,19 @@ This specific section focuses on mastering **C fundamentals**, covering:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/Mr-Anonymous-Guy/C-Projects.git
-   cd C-Projects
+   git clone https://github.com/Mr-Anonymous-Guy/01_C_Projects
+   cd cli-c-calculator
+
+   make
+
+   make run
+
+   ```
+### ✅ Alternate Way
+
+You can automatically open the program   just by double-clicking the build.sh (For macOS/LINUX/iOS) file and build.bat(Windows) 
+
+  ---
 
    
 
@@ -77,7 +88,7 @@ Add Data Structure Toolkit (Stack, Queue, Linked List)
 
 Add Expense Tracker with file-based storage
 
-Add AI-enhanced command suggestion shell (C-based mini AI)
+Add an AI-enhanced command suggestion shell (C-based mini AI)
 
 👤 Author
 
