@@ -16,49 +16,60 @@ A **modular pattern generator in C**, designed for portfolio and freelance showc
 ---
 
 ## 📁 Project Structure
-```bash
-PatternPrinter/
-├── README.md
-├── Makefile
-├── build.bat <- Windows build & run script
-├── build.sh <- macOS/Linux/iOS build & run script
-├── src/
-│ ├── main.c
-│ ├── patterns.c
-│ └── patterns.h
-├── history/
-│ └── output.txt <- stores all pattern outputs
-└── examples/
-└── sample_output.txt
+
 ```
+PatternPrinter/
+├── README.md            <- You are here
+├── Makefile
+├── src/
+│   ├── main.c
+│   ├── patterns.c
+│   └── patterns.h
+└── examples/
+    └── sample_output.txt
+```
+
 ---
 
+## 🧠 How It Works
+
+### PatternOptions Struct (core API)
+
+```c
+typedef struct {
+    PatternType type;   // Type of pattern (pyramid, diamond, etc.)
+    int rows;           // Number of rows
+    char fill;          // Fill character
+    int numbered;       // Enable number patterns
+    FILE *out;          // Output stream (stdout or file)
+} PatternOptions;
+```
+
+Main entry function:
+
+```c
+int print_pattern(const PatternOptions *opt);
+```
 
 ---
 
 ## 🛠️ Build Instructions
 
-### ✅ Using Makefile (Linux/macOS/iOS)
+### ✅ Using Makefile (Linux/macOS/MinGW)
 
 ```bash
 make            # Build executable
-
-make run
+./pattern_printer -p pyramid -r 5
 ```
-
 
 ### 🪟 On Windows (manual)
 
 If Makefile isn’t available:
 
 ```bash
-make
-
-make run
+gcc src/main.c src/patterns.c -o pattern_printer.exe -I src
+pattern_printer.exe -p diamond -r 5
 ```
-### ✅ Alternate Way
-
-You can automatically open the program   just by double-clicking the build.sh (For macOS/LINUX/iOS) file and build.bat(Windows) 
 
 ---
 
@@ -76,24 +87,54 @@ You can automatically open the program   just by double-clicking the build.sh (F
 
 ---
 
-## 💡 Program Overview
+## 💡 Usage Examples
 
-### 1️⃣ Run the program
+### 1️⃣ Print Pyramid (default)
+
+```bash
+./pattern_printer -p pyramid -r 5
+```
+
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
+
+### 2️⃣ Pascal Triangle to File
+
+```bash
+./pattern_printer -p pascal -r 6 -o pascal.txt
+```
+
+### 3️⃣ Number Pyramid (mirrored)
+
+```bash
+./pattern_printer -p numbers -r 5 -n
+```
 
 ---
 
-```bash
-=== Pattern Printer ===
-1. Pyramid
-2. Inverted Pyramid
-3. Number Pyramid
-4. Pascal Triangle
-5. Diamond
-6. Hollow Diamond
-7. Butterfly
-8. Exit
-Enter choice (1-8):
+## 🧩 Example Output (sample_output.txt)
+
 ```
+   *
+  ***
+ *****
+*******
+```
+
+---
+
+## 📈 Why This Project Attracts Employers
+
+✅ **Readable, structured C code** — professional modular separation and headers.
+✅ **Demonstrates CLI + file I/O skills** — commonly used in production-level systems.
+✅ **Clean documentation** — instant understanding for hiring managers or clients.
+✅ **Expandable design** — new patterns or options can be added with minimal changes.
+✅ **Ready for GitHub portfolio** — perfect to showcase low-level programming ability.
 
 ---
 
@@ -116,7 +157,6 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 ### 💻 Author
 
 **Developed by:** Mr-Anonymous-Guy**
-🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
 📧 Contact: mr.anonymous071105@gmail.com
 🌐 GitHub: [github.com/Mr-Anonymous-Guy]
 

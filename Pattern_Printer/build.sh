@@ -15,7 +15,7 @@ fi
 EXE="pattern_printer"
 
 # Compile the program
-echo "Compiling Pattern Printer..."
+echo "Compiling Pattern_Printer..."
 gcc main.c patterns.c -o $EXE -Wall -Wextra -O2
 
 # Check compilation status
