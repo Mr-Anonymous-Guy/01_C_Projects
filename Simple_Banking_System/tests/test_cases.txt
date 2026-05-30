@@ -1,0 +1,43 @@
+Simple Banking System - Standard Test Cases
+===========================================
+
+Scenario 1: Account Creation & Initial Deposit
+----------------------------------------------
+*   **Action**: Select Option `1` from Welcome Menu.
+*   **Input**:
+    *   Full Name: `Alice Vance`
+    *   PIN: `1111`
+    *   Deposit: `1000.00`
+*   **Expected**: Account created successfully. Displays a unique 6-digit account number (e.g. `102938`), holder name, and balance of `$1000.00`. An audit entry and transaction creation log are appended.
+
+Scenario 2: Secure Login & Retry Locks
+--------------------------------------
+*   **Action**: Select Option `2` from Welcome Menu.
+*   **Input**:
+    *   Account Number: `102938`
+    *   PIN (1st try): `9999` (Incorrect)
+    *   PIN (2nd try): `8888` (Incorrect)
+    *   PIN (3rd try): `7777` (Incorrect)
+*   **Expected**: Screen notifies attempts are exhausted. Session ends. Select Option `2` again and try the correct PIN `1111`. System must block the login and show `[ALERT] This account is frozen. Please contact a bank administrator.` Audit log entries are generated.
+
+Scenario 3: Administrator Overrides (Unfreezing Accounts)
+---------------------------------------------------------
+*   **Action**: Select Option `3` (Admin Login) from Welcome Menu.
+*   **Input**:
+    *   Admin Username: `admin`
+    *   Admin Password: `admin123`
+*   **Expected**: Admin login succeeds and displays the Admin Dashboard.
+*   **Action**: Select Option `3` (Freeze/Unfreeze Account).
+*   **Input**: Account Number: `102938`.
+*   **Expected**: System displays: `[SUCCESS] Account 102938 status updated successfully! New Status: [ACTIVE]`.
+*   **Action**: Select Option `7` (Logout). Go back to User Login and verify that Alice can now log in successfully with PIN `1111`.
+
+Scenario 4: Transaction Handling (Withdrawal & Deposit)
+-------------------------------------------------------
+*   **Action**: Log in as Alice (`102938` / `1111`).
+*   **Action**: Select Option `1` (Deposit). Input `500.50`.
+*   **Expected**: Success banner: `[SUCCESS] Deposited $500.50. New Balance: $1500.50`.
+*   **Action**: Select Option `2` (Withdraw). Input `200.00`.
+*   **Expected**: Success banner: `[SUCCESS] Withdrew $200.00. Remaining Balance: $1300.50`.
+*   **Action**: Select Option `5` (View Transaction Ledger).
+*   **Expected**: Shows CREATE ($1000), DEPOSIT ($500.50), and WITHDRAW ($200) events with matching timestamps and balances.

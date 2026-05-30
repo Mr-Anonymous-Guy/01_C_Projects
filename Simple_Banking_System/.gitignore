@@ -1,0 +1,20 @@
+# Compiler outputs & executable binaries
+build/
+*.exe
+*.out
+*.o
+
+# Build artifacts directory
+obj/
+
+# Database and ledger persistent storage
+data/accounts.dat
+data/admins.dat
+data/transactions.log
+data/audit.log
+
+# IDE and OS configurations
+.vscode/
+.idea/
+.DS_Store
+*.log

@@ -1,0 +1,32 @@
+Simple Banking System - Edge Cases & Security Inputs
+===================================================
+
+Boundary Case 1: Negative Values & Character Inject
+---------------------------------------------------
+*   **Target**: Deposit, Withdrawal, and Creation balance fields.
+*   **Actions**:
+    *   Set initial deposit value to `-500` or `abc`.
+    *   Set withdrawal target value to `-50`.
+*   **Expected**: The sscanf input parser in `utils.c` detects parsing mismatches and returns 0. The transaction filters intercept negative values and output: `[ERROR] amount must be a positive number.` No data files are modified.
+
+Boundary Case 2: Overdraft & Asset Violations
+---------------------------------------------
+*   **Target**: Withdrawals and transfers.
+*   **Actions**:
+    *   Attempt to withdraw `$1500.00` from an account containing only `$1300.50`.
+    *   Attempt to transfer `$2000.00` to another account.
+*   **Expected**: The core banking validations block the operation before disk writes. The console prints: `[ERROR] Insufficient funds.` Transaction logs capture the failure status as `FAILED (OVERDRAFT)`.
+
+Boundary Case 3: Empty Fields & Whitespace Padding
+--------------------------------------------------
+*   **Target**: Name field upon registration.
+*   **Actions**:
+    *   Input `   ` (only spaces) or hit Enter without characters.
+    *   Input names with numeric suffixes (e.g. `John Doe 2`).
+*   **Expected**: `validate_name` returns 0. The program rejects the name structure and exits the wizard without writing records to disk.
+
+Boundary Case 4: Same-Account Transfers
+---------------------------------------
+*   **Target**: Transfer target validation.
+*   **Action**: Attempt to transfer money from Alice's account (`102938`) to Alice's account (`102938`).
+*   **Expected**: Core validation captures the collision and prints: `[ERROR] You cannot transfer funds to your own account.` The transaction ledger writes a fail status.
