@@ -1,0 +1,19 @@
+# Compiler outputs & executable binaries
+atm_system
+atm_system.exe
+*.out
+*.exe
+*.o
+
+# Build artifacts directory
+obj/
+
+# Account data and transaction ledgers
+data/accounts.dat
+data/transactions.log
+
+# System/IDE configurations
+.vscode/
+.idea/
+.DS_Store
+*.log

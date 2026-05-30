@@ -1,0 +1,99 @@
+ATM Management System - Manual Test Scenarios & Cases
+======================================================
+
+These test cases detail standard operations and boundary/negative scenarios to verify that the application handles inputs securely, updates files correctly, and fails gracefully.
+
+---
+
+Test Case 1: Account Creation Validations
+-----------------------------------------
+*   **Goal**: Ensure only valid names, PINs, and positive amounts can create accounts.
+*   **Steps**:
+    1. Select Option `1` (Create New Account) from the Welcome Menu.
+    2. Input name `John123` (Contains numbers).
+       *   *Expected Outcome*: System shows `[ERROR] Invalid Name format. Use letters and spaces only.` and returns to menu.
+    3. Select Option `1` again.
+    4. Input name `John Doe`.
+    5. Input PIN `12` (Less than 4 digits).
+       *   *Expected Outcome*: System shows `[ERROR] Invalid PIN. PIN must be exactly 4 digits.` and returns to menu.
+    6. Select Option `1` again.
+    7. Input name `John Doe`, PIN `4321`.
+    8. Input Initial Deposit `-150.00` (Negative amount).
+       *   *Expected Outcome*: System shows `[ERROR] Invalid amount. Deposit must be a positive number.` and returns to menu.
+    9. Select Option `1` again.
+    10. Input name `John Doe`, PIN `4321`, Initial Deposit `500.00`.
+       *   *Expected Outcome*: Screen displays loading effect followed by:
+           `🚀 Account successfully created!`
+           `Account Number : XXXXXX` (Write this down!)
+           `Holder Name    : John Doe`
+           `Opening Balance: $500.00`
+
+---
+
+Test Case 2: Secure Login Verification & Retry Limits
+-----------------------------------------------------
+*   **Goal**: Ensure users can only log in with valid PINs and are locked out after 3 failed attempts.
+*   **Steps**:
+    1. Select Option `2` (Login) from Welcome Menu.
+    2. Input Account Number `000000` (Non-existent account).
+       *   *Expected Outcome*: System displays `[ERROR] Account 000000 does not exist.` and returns to Welcome Menu.
+    3. Select Option `2` again.
+    4. Input the Account Number generated in Test Case 1 (`XXXXXX`).
+    5. Input PIN `1111` (Wrong PIN).
+       *   *Expected Outcome*: System displays `[ERROR] Incorrect PIN value.` and increments retry to (Attempt 2/3).
+    6. Input PIN `2222` (Wrong PIN).
+       *   *Expected Outcome*: System displays `[ERROR] Incorrect PIN value.` and increments retry to (Attempt 3/3).
+    7. Input PIN `3333` (Wrong PIN).
+       *   *Expected Outcome*: System displays `[ALERT] Too many incorrect login attempts. Access denied.` and locks the session, returning to Welcome Menu.
+    8. Select Option `2` again.
+    9. Input Account Number (`XXXXXX`).
+    10. Input PIN `4321` (Correct PIN).
+       *   *Expected Outcome*: Screen shows loading animation, and launches the User Dashboard.
+
+---
+
+Test Case 3: Deposits Constraints
+---------------------------------
+*   **Goal**: Prevent negative and invalid deposit values.
+*   **Steps**:
+    1. Select Option `1` (Deposit Funds) from the User Dashboard.
+    2. Input Deposit Amount `-100.00` (Negative).
+       *   *Expected Outcome*: System displays `[ERROR] Deposit amount must be a positive number.` and does not update balance.
+    3. Select Option `1` again.
+    4. Input Deposit Amount `250.50`.
+       *   *Expected Outcome*: System displays success message:
+           `✅ Success! Deposited $250.50. New Balance: $750.50`
+
+---
+
+Test Case 4: Withdrawal Constraints & Overdraft Denials
+-------------------------------------------------------
+*   **Goal**: Verify overdraft protection and invalid withdrawal blocks.
+*   **Steps**:
+    1. Select Option `2` (Withdraw Funds) from the User Dashboard.
+    2. Input Withdrawal Amount `-50.00` (Negative).
+       *   *Expected Outcome*: System displays `[ERROR] Withdrawal amount must be a positive number.` and does not update balance.
+    3. Select Option `2` again.
+    4. Input Withdrawal Amount `900.00` (Greater than balance $750.50).
+       *   *Expected Outcome*: System displays `[ERROR] Insufficient funds. Overdraft denied.` and does not update balance.
+    5. Select Option `2` again.
+    6. Input Withdrawal Amount `150.00`.
+       *   *Expected Outcome*: System displays success:
+           `✅ Success! Withdrew $150.00. Remaining Balance: $600.50`
+
+---
+
+Test Case 5: Transaction Ledger & Data Persistence
+--------------------------------------------------
+*   **Goal**: Verify transaction logging and persistent storage across application runs.
+*   **Steps**:
+    1. Select Option `4` (View Transaction Ledger) from the User Dashboard.
+       *   *Expected Outcome*: Displays history records with correct timestamps:
+           - CREATE event for $500.00
+           - DEPOSIT event for $250.50
+           - WITHDRAW event for $150.00
+    2. Select Option `5` (Logout) to exit session.
+    3. Select Option `3` (Exit System) on the Welcome Menu to terminate the program.
+    4. Run the program again via `./run.sh`.
+    5. Select Option `2` (Login) and log in with Account Number (`XXXXXX`) and PIN `4321`.
+       *   *Expected Outcome*: Success. Check Option `3` (Check Balance). The balance must persist as `$600.50`.
