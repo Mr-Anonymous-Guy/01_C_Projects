@@ -64,8 +64,7 @@ static void parse_redirections(Parser *parser, ASTNode *node) {
             if (file && file->type == TOKEN_WORD) {
                 ast_add_redirection(node, redir_type, file->value);
             } else {
-                /* Error: expected filename after redirection */
-                /* For now, just continue, should handle robustly in real shell */
+                fprintf(stderr, "novashell: syntax error: expected filename after redirection operator\n");
             }
         } else {
             break;
@@ -81,7 +80,7 @@ ASTNode *parse_command(Parser *parser) {
         parser_advance(parser); /* consume '(' */
         ASTNode *expr = parse_expression(parser, PREC_NONE);
         if (!parser_match(parser, TOKEN_RPAREN)) {
-            /* Error: expected ')' */
+            fprintf(stderr, "novashell: syntax error: expected ')' to close subshell\n");
         }
         ASTNode *subshell = ast_new_subshell(expr);
         parse_redirections(parser, subshell);

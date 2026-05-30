@@ -7,7 +7,7 @@ typedef struct {
     int accountNumber;
     char name[MAX_NAME_LEN];
     int hashedPin;
-    float balance;
+    double balance;
 } Account;
 
 /**
@@ -18,7 +18,7 @@ typedef struct {
  * @param new_acc Pointer to Account struct where the details will be stored.
  * @return int 1 if successful, 0 if validation fails.
  */
-int create_new_account(const char *name, int pin, float initial_balance, Account *new_acc);
+int create_new_account(const char *name, int pin, double initial_balance, Account *new_acc);
 
 /**
  * @brief Generates a unique 6-digit account number.

@@ -89,7 +89,7 @@ int account_exists(int account_num) {
     return load_account(account_num, &temp);
 }
 
-int log_transaction(int account_num, const char *type, float amount, float new_balance) {
+int log_transaction(int account_num, const char *type, double amount, double new_balance) {
     ensure_data_directory();
     FILE *file = fopen(LOGS_FILE, "a");
     if (!file) {

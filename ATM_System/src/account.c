@@ -34,14 +34,14 @@ int generate_unique_account_number(void) {
     return num;
 }
 
-int create_new_account(const char *name, int pin, float initial_balance, Account *new_acc) {
+int create_new_account(const char *name, int pin, double initial_balance, Account *new_acc) {
     if (!validate_name(name)) {
         return 0;
     }
     if (pin < 0 || pin > 9999) {
         return 0;
     }
-    if (initial_balance < 0.0f) {
+    if (initial_balance < 0.0) {
         return 0;
     }
 

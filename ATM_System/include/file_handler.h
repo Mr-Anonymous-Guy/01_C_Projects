@@ -34,7 +34,7 @@ int load_account(int account_num, Account *acc);
  * @param new_balance The resulting balance.
  * @return int 1 if successful, 0 otherwise.
  */
-int log_transaction(int account_num, const char *type, float amount, float new_balance);
+int log_transaction(int account_num, const char *type, double amount, double new_balance);
 
 /**
  * @brief Checks if an account exists in the accounts file.

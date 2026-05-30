@@ -62,7 +62,7 @@ int main(void) {
             print_header("CREATE NEW ACCOUNT");
             char name[100];
             int pin = 0;
-            float initial_deposit = 0.0f;
+            double initial_deposit = 0.0;
 
             printf(" Enter Full Name: ");
             read_string(name, sizeof(name));
@@ -81,7 +81,7 @@ int main(void) {
             }
 
             printf(" Initial Deposit Amount ($): ");
-            if (!read_float(&initial_deposit) || initial_deposit < 0.0f) {
+            if (!read_float(&initial_deposit) || initial_deposit < 0.0) {
                 printf("\n[ERROR] Invalid amount. Deposit must be a positive number.\n");
                 press_enter_to_continue();
                 continue;
@@ -169,7 +169,7 @@ int main(void) {
                     print_header("DEPOSIT FUNDS");
                     float deposit_amt = 0.0f;
                     printf(" Enter deposit amount ($): ");
-                    if (!read_float(&deposit_amt) || deposit_amt <= 0.0f) {
+                    if (!read_float(&deposit_amt) || deposit_amt <= 0.0) {
                         printf("\n[ERROR] Deposit amount must be a positive number.\n");
                     } else {
                         show_loading_effect(" Processing deposit");
@@ -186,7 +186,7 @@ int main(void) {
                     float withdraw_amt = 0.0f;
                     printf(" Current Available Balance: $%.2f\n", active_acc.balance);
                     printf(" Enter withdrawal amount ($): ");
-                    if (!read_float(&withdraw_amt) || withdraw_amt <= 0.0f) {
+                    if (!read_float(&withdraw_amt) || withdraw_amt <= 0.0) {
                         printf("\n[ERROR] Withdrawal amount must be a positive number.\n");
                     } else {
                         show_loading_effect(" Processing withdrawal");

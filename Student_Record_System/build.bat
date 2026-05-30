@@ -14,7 +14,7 @@ IF EXIST student_system.exe (
 )
 
 REM Compile the project using gcc
-gcc -Wall -Wextra -Iincludes src\main.c src\student.c -o student_system.exe
+gcc -Wall -Wextra -Iinclude src\main.c src\student.c -o student_system.exe
 
 IF %ERRORLEVEL% NEQ 0 (
     echo.

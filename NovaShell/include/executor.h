@@ -16,6 +16,7 @@ typedef struct {
 
 /* Core execution entry point */
 int execute_ast(ASTNode *node);
+int execute_node(ASTNode *node, ExecContext *ctx);
 
 /* Sub-executors */
 int execute_command(CommandData *cmd, ExecContext *ctx);

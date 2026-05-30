@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <sys/wait.h>
 
-/* Forward declaration for recursion */
-extern int execute_node(ASTNode *node, ExecContext *ctx);
-
 int execute_pipeline(ASTNode *left, ASTNode *right, ExecContext *ctx) {
     int pipefd[2];
     if (pipe(pipefd) < 0) {
@@ -43,10 +40,13 @@ int execute_pipeline(ASTNode *left, ASTNode *right, ExecContext *ctx) {
     /* If right is also a pipeline, execute_node will recurse, continuing the chain */
     int right_status = execute_node(right, &right_ctx);
 
-    /* Close read end after right is done or handed off */
+    /* Always close the read end of the pipe we created */
+    close(pipefd[0]);
+
+    /* Close any inherited non-standard input FD from a parent pipeline */
     if (ctx->fd_in != STDIN_FILENO) close(ctx->fd_in);
     
-    /* We should reap the left child now */
+    /* Reap the left child now */
     waitpid(left_pid, NULL, 0);
 
     return right_status;

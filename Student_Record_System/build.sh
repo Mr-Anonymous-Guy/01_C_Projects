@@ -21,7 +21,7 @@ if [ -f student_system ]; then
 fi
 
 # Compile
-gcc -Wall -Wextra -Iincludes src/main.c src/student.c -o student_system
+gcc -Wall -Wextra -Iinclude src/main.c src/student.c -o student_system
 
 # Check if compilation succeeded
 if [ $? -ne 0 ]; then

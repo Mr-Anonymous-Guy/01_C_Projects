@@ -5,8 +5,8 @@
 #include "file_handler.h"
 #include "utils.h"
 
-int deposit_money(Account *acc, float amount) {
-    if (amount <= 0.0f) {
+int deposit_money(Account *acc, double amount) {
+    if (amount <= 0.0) {
         return 0;
     }
 
@@ -22,8 +22,8 @@ int deposit_money(Account *acc, float amount) {
     return 1;
 }
 
-int withdraw_money(Account *acc, float amount) {
-    if (amount <= 0.0f) {
+int withdraw_money(Account *acc, double amount) {
+    if (amount <= 0.0) {
         return 0;
     }
 

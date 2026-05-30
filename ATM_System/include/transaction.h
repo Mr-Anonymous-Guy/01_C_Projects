@@ -9,7 +9,7 @@
  * @param amount The amount to deposit.
  * @return int 1 if successful, 0 if validation fails.
  */
-int deposit_money(Account *acc, float amount);
+int deposit_money(Account *acc, double amount);
 
 /**
  * @brief Performs a withdrawal of a specified amount from the account.
@@ -17,7 +17,7 @@ int deposit_money(Account *acc, float amount);
  * @param amount The amount to withdraw.
  * @return int 1 if successful, 0 if insufficient funds or invalid amount.
  */
-int withdraw_money(Account *acc, float amount);
+int withdraw_money(Account *acc, double amount);
 
 /**
  * @brief Prints the transaction history for a specific account.

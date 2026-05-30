@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iincludes
+CFLAGS = -Wall -Wextra -Iinclude
 SRC = src/main.c src/student.c
 OUT = student_system.exe
 
