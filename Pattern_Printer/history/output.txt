@@ -19,3 +19,9 @@ abcde
       1
 
 --- End of Pattern ---
+   1
+  123
+ 12345
+1234567
+
+--- End of Pattern ---

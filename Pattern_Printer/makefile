@@ -10,27 +10,26 @@ CFLAGS = -Wall -Wextra -O2
 TARGET = pattern_printer
 
 # Source files
-SRC = main.c patterns.c
+SRC = src/main.c src/Patterns.c
 
 # Object files
 OBJ = $(SRC:.c=.o)
 
-# Detect OS (Windows vs Unix)
-UNAME_S := $(shell uname -s)
-
 ifeq ($(OS),Windows_NT)
     RM = del /Q
     EXE = $(TARGET).exe
+    CLEAN_OBJ = $(subst /,\,$(OBJ))
 else
     RM = rm -f
     EXE = $(TARGET)
+    CLEAN_OBJ = $(OBJ)
 endif
 
 # Default target
 all: $(EXE)
 
 # Compile objects
-%.o: %.c patterns.h
+%.o: %.c src/patterns.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Link executable
@@ -41,13 +40,13 @@ $(EXE): $(OBJ)
 run: $(EXE)
 	@echo Running $(EXE)...
 ifeq ($(OS),Windows_NT)
-	$(EXE)
+	.\$(EXE)
 else
 	./$(EXE)
 endif
 
 # Clean build files
 clean:
-	$(RM) $(OBJ) $(EXE)
+	-$(RM) $(CLEAN_OBJ) $(EXE) 2>nul || true
 
 .PHONY: all run clean
