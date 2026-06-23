@@ -62,7 +62,7 @@ int main(void) {
             print_header("CREATE NEW ACCOUNT");
             char name[100];
             int pin = 0;
-            double initial_deposit = 0.0;
+            float initial_deposit = 0.0f;
 
             printf(" Enter Full Name: ");
             read_string(name, sizeof(name));
