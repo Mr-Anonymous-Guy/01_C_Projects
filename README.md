@@ -1,7 +1,7 @@
 # C Systems & Software Engineering Projects
 
 <p align="center">
-  <img src="./Images.png" alt="C Projects Banner" width="100%">
+  <img src="Public/Image/Images.png" alt="C Projects Banner" width="100%">
 </p>
 
 <p align="center">
